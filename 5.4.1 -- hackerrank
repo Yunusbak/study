@@ -1,0 +1,92 @@
+1.
+def swap_case(s):
+    return s.swapcase()
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
+
+2.
+def split_and_join(line):
+    a = line.split()
+    b = '-'.join(a)
+    return b
+
+3.
+def print_full_name(first, last):
+    print("Hello " + first + " " + last + "! You just delved into python.")
+
+
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+
+4.
+def mutate_string(string, position, character):
+    l = list(string)
+    l[position] = character
+    string = ''.join(l)
+    return string
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+
+5.
+def count_substring(string, sub_string):
+    result = 0
+    for i in range(0, len(string)):
+        if string[i:len(string)].startswith(sub_string):
+            result += 1
+    return result
+
+
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
+6.
+if __name__ == '__main__':
+    s = input()
+
+res = False
+for i in s:
+    if i.isalnum():
+        res = True
+        break
+print(res)
+
+res = False
+for j in s:
+    if j.isalpha():
+        res = True
+        break
+print(res)
+
+res = False
+for k in s:
+    if k.isdigit():
+        res = True
+        break
+print(res)
+
+res = False
+for l in s:
+    if l.islower():
+        res = True
+        break
+print(res)
+
+res = False
+for l in s:
+    if l.isupper():
+        res = True
+        break
+print(res)
+   
+    
