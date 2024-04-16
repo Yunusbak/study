@@ -1,0 +1,121 @@
+1.
+def vaqt_farq():
+    x1 = vaqt1[0]* + vaqt1[1]*60 + vaqt1[2]
+    x2 = vaqt2[0]*3600 + vaqt2[1]*60 + vaqt2[2]
+
+    farq = x2 - x1
+
+    return farq
+vaqt1 = (00, 00, 00)
+vaqt2 = (23, 59, 59)
+
+
+print(vaqt_farq())
+
+2.
+def juft_bol_soni(N):
+    x= N
+    result = 0
+    list1 = []
+    if N % 2 == 0:
+        while N % 2 == 0:
+            result +=1
+            list1.append(N)
+            N //=2
+    return f"{x} soning bo'luvchilari -- {list1}, {result} ta "
+
+print(juft_bol_soni(400))
+
+
+def gen_def(num):
+    for i in range(2, num, 2):
+        if num % i == 0:
+            yield num
+            num //=2
+
+
+gen = gen_def(400)
+
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+3.
+def gen_tub_son(N):
+    for num in range(2, N + 1):
+        is_prime = True
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            yield num
+
+
+gen = gen_tub_son(50)
+for prime in gen:
+    print(prime)
+
+4.
+def tub_bol(num):
+    i = 2
+    while num > 1:
+        while num % i == 0:
+            yield i
+            num //= i
+        i += 1
+
+gen = tub_bol(30)
+for tub in gen:
+    print(tub)
+    
+5.
+def gen_juft_sonlar(list):
+    for i in list:
+        if i % 2 == 0:
+            yield i
+
+gen = gen_juft_sonlar([1,2,3,4,5,6,7,8,9,10])
+
+for juft in gen:
+    print(juft)
+
+6.
+def gen_len_word(text):
+    words = text.split()  
+    for word in words:
+        yield len(word)  
+
+text = "AZIZ YUNUS SALAMAT AZAMAT"
+gen = gen_len_word(text)
+for length in gen:
+    print(length)
+
+7.
+def gen_len_word(text):
+    words = text.split()  
+    for word in words:
+        if len(word) > 5:
+            yield word  
+
+text = "AZIZ YUNUS SALAMAT AZAMAT"
+gen = gen_len_word(text)
+for word in gen:
+    print(word)
+
+8.
+def gen_sonlar(list):
+    for i in list:
+        if list.count(i) == 3:
+            yield i 
+        
+
+gen = gen_sonlar([1,2,2,2,3,3,3,4,5,6,7,8,9,10])
+
+for son in gen:
+    print(son)
+
+
+
+
