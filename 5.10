@@ -1,0 +1,80 @@
+12.
+def bool_palindrom(num):
+    num_str = str(num)  
+    if num_str == num_str[::-1]:  
+        return True
+    else:
+        return False
+
+print(bool_palindrom(121)) 
+print(bool_palindrom(56))    
+10.
+def ekub(x, y):
+    ekub_num = 1
+    if x > y:
+        for i in range(2, y+1):
+            if x % i == 0 and y % i == 0:
+                ekub_num = i
+        return ekub_num
+    else:
+        for i in range(2, x+1):
+            if x % i == 0 and y % i == 0:
+                ekub_num = i
+        return ekub_num
+
+print(ekub(12,18))
+print(ekub(12,19))
+print(ekub(18,18))
+5.
+def index_total(numbers: list, total: int):
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)): 
+            if numbers[i] + numbers[j] == total:
+                return [i, j] 
+
+print(index_total([2,7,11,15], 9)) 
+7.
+def ochirish_va_qoshish(list):
+    list1 = [] 
+    while len(list) > 0:   
+        i = 2   
+        if i < len(list): 
+            list1.append(list.pop(i))  
+        else:
+            break 
+      
+    return list1
+
+print(ochirish_va_qoshish([10,20,30,40,50,60,70,80,90]))
+
+3.
+def N_sum(n):
+    if n % 2 == 0:
+        return f"2 sumlikda {n/2} marta 1 sumlikda {n} marta"
+    if n % 2 == 1:
+        return f"2 sumlikda {(n-1)/2} marta + 1 sum"
+    
+print(N_sum(42))
+print(N_sum(23))
+print(N_sum(0))
+print(N_sum(1))
+print(N_sum(3))
+
+4.
+def find_numbers(L, R, N):
+    result = []
+    for i in range(L, R+1):
+        digits1 = [int(digit) for digit in str(i)]
+        if sum(digits1) == N:
+            for j in range(R, L-1, -1):
+                digits2 = [int(digit) for digit in str(j)]
+                if sum(digits2) == N:
+                    result.append([i, j])
+                    break  
+            if result: 
+                break
+    return result
+
+print(find_numbers(1, 20, 5))  # [[5, 14]]
+print(find_numbers(100, 200, 10))  # [[109, 190]]
+
