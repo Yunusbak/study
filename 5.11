@@ -1,0 +1,188 @@
+1.
+def orta_arif(list1: list, list2: list):
+    
+    return (sum(list1)/len(list1) + sum(list2)/len(list2)) / 2
+
+print(orta_arif([1, 1, 3, 4, 4, 5, 6, 7], [0, 1, 2, 3, 4, 4, 5, 7, 8]))
+
+2 - variant
+ikkala listda bolmaganlarning orta arifmetigi:
+def pubg(list1: list, list2: list):
+    list3 = []
+    if list1 == list2:
+        return f"2ta list bir briga teng JAVOB == 0 "
+    
+    if len(list1) == len(list2) and list1 != list2:
+        for j in list1:
+            if j not in list2:
+                list3.append(j)
+        for k in list2:
+            if k not in list1:
+                list3.append(k)
+
+        return f"list = {list3} orta arifmetik -- {sum(list3)/len(list3)}"
+        
+    if len(list1) > len(list2):
+        for i in list1:
+            if i not in list2:
+                list3.append(i)
+        for e in list2:
+            if e not in list1:
+                list3.append(e)
+        return f"list = {list3} orta arifmetik -- {sum(list3)/len(list3)}"
+
+    if len(list1) < len(list2):
+        for n in list2:
+            if n not in list1:
+                list3.append(n)
+        for m in list1:
+            if m not in list2:
+                list3.append(m)
+        return f"list = {list3} orta arifmetik -- {sum(list3)/len(list3)}"
+
+
+print(pubg([1, 1, 3, 4, 4, 5, 6, 7], [0, 1, 2, 3, 4, 4, 5, 7, 8]))
+print(pubg([1,2],[1,2]))
+print(pubg([0], [0]))
+print(pubg([1,2,3],[3,6]))
+
+
+
+2.
+def analiz(list):
+    result = 0
+    for i in list:
+        if type(i) == int:
+            result +=1
+
+    return f"bu listda -- {list}, {result} ta int bor"
+
+print(analiz([1, 'abcd', 3, 1.2, 4, 'xyz', 5, 'pqr', 7, -5, -12.22]))
+
+3.
+def tuple_del(list):
+    list1 = []
+    for i in list:
+        if not len(i) == 0:
+            list1.append(i)
+
+    return list1
+print(tuple_del([(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), ('d')]))
+
+4.
+def oxirgi_indeks(text, belgi):
+    indeks = 5
+    for i in range(len(text)):
+        if text[i] == belgi:
+            indeks = i
+    return indeks
+
+txt = "Hello, welcome to my world."
+belgi = 'o'
+
+oxirgi = oxirgi_indeks(txt, belgi)
+print(oxirgi)
+
+5.
+def son_2x(a, b):
+    result = []
+    for i in range(a+1, b):
+        if int(i**0.5)**2 == i:
+            result.append(round(i**0.5))
+    if result:
+        return result
+    else:
+        return f"{a} -- {b} bu sonlar orasida qaysi bir sonning kvadratlari yo'q"
+
+print(son_2x(15, 40)) 
+
+
+6.
+python.txt 
+'''
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod ultricies odio, nec vestibulum justo. Integer at arcu neque. Vestibulum commodo ligula id sapien mattis,
+sit amet laoreet odio varius. Maecenas vel nisi at justo tincidunt laoreet. Nullam et commodo nulla. Nam nec nunc eros. Vivamus vel justo eget elit iaculis gravida. Duis in 
+nulla ut nisi ultrices hendrerit. Sed convallis euismod velit, sed iaculis nunc ultricies nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia 
+Curae; Integer dapibus augue non augue finibus, sit amet vehicula libero fermentum. Nam efficitur, orci a ultrices posuere, mauris velit aliquam libero, at venenatis libero nulla 
+et tortor. 
+'''
+with open("python.txt", 'r') as file:
+    content = file.read()
+    print(content)
+
+words = content.split()
+max_length = 0
+max_word = ""
+
+for i in words:
+    if len(i) > max_length:
+        max_length = len(i)
+        max_word = i
+
+print(f"eng uzun so'z bu -- {max_word} va uzunligi - {max_length}")
+
+7.
+'''
+[{"id":1,"first_name":"Christi","last_name":"Goodin","gender":"Female"},
+{"id":2,"first_name":"Burton","last_name":"Lambot","gender":"Male"},
+{"id":3,"first_name":"Ingrim","last_name":"Andrassy","gender":"Male"},
+{"id":4,"first_name":"Lyon","last_name":"Wilkins","gender":"Male"},
+{"id":5,"first_name":"Kip","last_name":"Hackney","gender":"Male"},
+{"id":6,"first_name":"Ernestine","last_name":"Kinkaid","gender":"Female"},
+{"id":7,"first_name":"Darci","last_name":"Haward","gender":"Female"},
+{"id":8,"first_name":"Lynda","last_name":"Anten","gender":"Female"},
+{"id":9,"first_name":"Dannel","last_name":"Alkins","gender":"Male"},
+{"id":10,"first_name":"Lindsay","last_name":"Benning","gender":"Non-binary"},
+{"id":11,"first_name":"Adel","last_name":"Breffitt","gender":"Female"},
+{"id":12,"first_name":"Garfield","last_name":"Abramski","gender":"Male"},
+{"id":13,"first_name":"Yardley","last_name":"Lowrie","gender":"Male"},
+{"id":14,"first_name":"Reilly","last_name":"Pieterick","gender":"Male"},
+{"id":15,"first_name":"Liva","last_name":"Steed","gender":"Female"},
+{"id":16,"first_name":"Georgeta","last_name":"Bale","gender":"Female"},
+{"id":17,"first_name":"Atlante","last_name":"MacCosty","gender":"Female"},
+{"id":18,"first_name":"Nobie","last_name":"Hassen","gender":"Male"},
+{"id":19,"first_name":"Dayna","last_name":"Buy","gender":"Female"},
+{"id":20,"first_name":"Ruggiero","last_name":"Le Jean","gender":"Male"},
+{"id":21,"first_name":"Winonah","last_name":"Widdowes","gender":"Female"},
+{"id":22,"first_name":"Ezequiel","last_name":"Lambarth","gender":"Male"},
+{"id":23,"first_name":"Herman","last_name":"Penreth","gender":"Male"},
+{"id":24,"first_name":"Renault","last_name":"Shearwood","gender":"Male"},
+{"id":25,"first_name":"Sarge","last_name":"Yarrington","gender":"Male"},
+{"id":26,"first_name":"Gaston","last_name":"Nouch","gender":"Male"},
+{"id":27,"first_name":"Sabine","last_name":"Escalero","gender":"Female"},
+{"id":28,"first_name":"Basil","last_name":"Whilde","gender":"Male"},
+{"id":29,"first_name":"Francoise","last_name":"Kobsch","gender":"Female"},
+{"id":30,"first_name":"Collin","last_name":"O'Dulchonta","gender":"Male"},
+{"id":31,"first_name":"Packston","last_name":"Bourget","gender":"Male"},
+{"id":32,"first_name":"Ermengarde","last_name":"Ellerton","gender":"Female"},
+{"id":33,"first_name":"Wiley","last_name":"Szymczyk","gender":"Genderqueer"},
+{"id":34,"first_name":"Haskell","last_name":"Buxsey","gender":"Male"},
+{"id":35,"first_name":"Herta","last_name":"Knowlson","gender":"Female"},
+{"id":36,"first_name":"Gorden","last_name":"Robic","gender":"Male"},
+{"id":37,"first_name":"Sherman","last_name":"O'Carroll","gender":"Male"},
+{"id":38,"first_name":"Hedvig","last_name":"Januszewski","gender":"Female"},
+{"id":39,"first_name":"Thane","last_name":"Blazewicz","gender":"Male"},
+{"id":40,"first_name":"Gottfried","last_name":"Clearie","gender":"Male"},
+{"id":41,"first_name":"Jessy","last_name":"Matas","gender":"Female"},
+{"id":42,"first_name":"Britt","last_name":"Naisbit","gender":"Polygender"},
+{"id":43,"first_name":"Reagen","last_name":"Huffey","gender":"Male"},
+{"id":44,"first_name":"Gusti","last_name":"McCaughey","gender":"Female"},
+{"id":45,"first_name":"Tiffy","last_name":"Bidnall","gender":"Female"},
+{"id":46,"first_name":"Jerry","last_name":"Nevin","gender":"Female"},
+{"id":47,"first_name":"Marin","last_name":"Buston","gender":"Female"},
+{"id":48,"first_name":"Justino","last_name":"Tunniclisse","gender":"Male"},
+{"id":49,"first_name":"Pamelina","last_name":"Blazewski","gender":"Genderfluid"},
+{"id":50,"first_name":"Forester","last_name":"Tesseyman","gender":"Male"}]
+'''
+
+with open("MOCK_DATA.json", 'r') as file:
+    fayl = file.readlines()
+
+result = 0
+for line in fayl:
+    result += 1
+
+print("Fayl", result, "qatorlik")
+
+8.
+
