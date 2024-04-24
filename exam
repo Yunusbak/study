@@ -1,0 +1,115 @@
+4.
+from collections import namedtuple
+
+class Transport(namedtuple('Transport', ['model', 'color'])):
+    pass
+
+class Car(Transport):
+    def __new__(cls, model, color, year, price):
+        return super().__new__(cls, model, color)
+    def __init__(self, model, color, year, price):
+        self.year = year
+        self.price = price
+
+    def info(self):
+        return f"{self.model} - modeli\n{self.color} - color\n{self.year}\{self.price}  - narxi"
+    
+    def new_price(price):
+        price1 = price
+
+
+t1 =Transport("BMW", "Qora")
+
+c1 = Car("Audi", "yellow", 2015, 1232362 )
+
+print(c1.info())
+print(c1.new_price())
+3.
+git buyruqlar: 
+1. get init
+2.git add
+3. git commit
+4. git push
+
+2.
+CREATE TABLE product (
+    id SERIAL,
+    name VARCHAR(255),
+    color VARCHAR(50),
+    price NUMERIC(10,2)
+);
+
+1.
+from decimal import Decimal
+
+class todecimal:
+    def __init__(self, x: float):
+        self.decimal = Decimal(str(x))
+
+
+x = 5.652
+dec_obj = todecimal(x)
+print(dec_obj.decimal)  
+
+6.
+keys = ["name", "description", "title", "keywords", "content", "charset"]
+values = ["document", "The best document", "My document", "doc, word,excel", "None"]
+
+dict1 = {key: value for key, value in zip(keys, values[:-1])}  
+
+print(dict1)
+
+6.
+class alphabet:
+    def __init__(self):
+        self.harf = 'njdnxjnjasx'
+
+    def __iter__(self):
+        self.index = 5
+        return self
+
+    def __next__(self):
+        if self.index < len(self.harf):
+            result = self.harf[self.index]
+            self.index += 1
+            return result
+        else:
+            raise StopIteration
+
+obj1 = alphabet()
+for i in obj1:
+    print(i)
+
+10.
+import requests
+
+def func1():
+    response = requests.get('https://dummyjson.com/users')
+    data = response.json()
+    print(data)
+func1()
+
+
+8.
+
+def worker():
+    data = select_from_database()
+    for row in data:
+        print(row)
+
+def main():
+    processes = []
+    for _ in range(4):
+        p = Process(target=worker)
+        p.start()
+        processes.append(p)
+        
+    for p in processes:
+        p.join()
+
+if __name__ == "__main__":
+    main()
+
+bu faqat ish qismi malumotlar bazasiga zapros jo'natadigan oyiga vaqt etmadi
+
+
