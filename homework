@@ -1,0 +1,56 @@
+1.
+  def reverse_string(string):
+    result = string[::-1]  # Перевернутая строка
+    list1 = []
+    for i in range(len(result)):
+        list1.append(result[i:])  # Добавляем подстроку начиная с текущего индекса до конца
+    return list1
+
+print(reverse_string("abcde"))  # ['edcba', 'dcba', 'cba', 'ba', 'a']
+print(reverse_string("123"))    # ['321', '21', '1']
+
+  2.
+  def is_isogram(string):
+    string = string.lower()
+    for i in range(len(string)):
+        for j in range(i + 1, len(string)):
+            if string[i] == string[j]:
+                return False
+    return True
+
+print(is_isogram("aba"))   # False
+print(is_isogram("yunos")) # True
+3.
+
+  def tuple_del(list):
+    list1 = []
+    for i in list:
+        if not len(i) == 0:
+            list1.append(i)
+
+    return list1
+print(tuple_del([(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), ('d')]))
+
+4.
+  def test(string):
+    result = ""
+    for char in string:
+        if char.isdigit():
+            result += char
+    return result if result else "One more run!"
+
+
+print(test("hPrBKWDH8yc6Lt5NQZWQ"))  # "865"
+print(test("ynMAisVpHEqpqHBqTrwH"))  # "One more run!"
+print(test("555"))                   # "5"
+
+5.
+
+  def index_total(numbers: list, total: int):
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)): 
+            if numbers[i] + numbers[j] == total:
+                return [i, j] 
+
+print(index_total([2,7,11,15], 9))
+  
