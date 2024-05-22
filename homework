@@ -1,15 +1,25 @@
 1.
+You'll be given a string of characters as an input. Complete the function that returns a list of strings: (a) in the reverse order of the original string, and (b) with each successive string starting one character further in from the end of the original string.
+
+Assume the original string is at least 3 characters long. Try to do this using slices and avoid converting the string to a list.
+
+Examples
+'123'   ==>  ['321', '21', '1']
+'abcde' ==>  ['edcba', 'dcba', 'cba', 'ba', 'a']
+
+
   def reverse_string(string):
-    result = string[::-1]  # Перевернутая строка
+    result = string[::-1] 
     list1 = []
     for i in range(len(result)):
-        list1.append(result[i:])  # Добавляем подстроку начиная с текущего индекса до конца
+        list1.append(result[i:])  
     return list1
 
 print(reverse_string("abcde"))  # ['edcba', 'dcba', 'cba', 'ba', 'a']
 print(reverse_string("123"))    # ['321', '21', '1']
 
   2.
+
   def is_isogram(string):
     string = string.lower()
     for i in range(len(string)):
@@ -22,14 +32,25 @@ print(is_isogram("aba"))   # False
 print(is_isogram("yunos")) # True
 3.
 
-  def tuple_del(list):
-    list1 = []
-    for i in list:
-        if not len(i) == 0:
-            list1.append(i)
+  # Given a string of space separated words, return the longest word.
+# If there are multiple longest words, return the rightmost longest word.
 
-    return list1
-print(tuple_del([(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), ('d')]))
+# Examples
+# "red white blue"  =>  "white"
+# "red blue gold"   =>  "gold"
+
+def long_str(string):
+    res = string.split(" ")
+    x=0
+    for i in res:
+        if len(i)>0 or len(i) == i :
+            
+            result = i
+        
+    return result
+
+print(long_str("red white blue"))
+print(long_str("red blue gold"))
 
 4.
   def test(string):
@@ -45,12 +66,22 @@ print(test("ynMAisVpHEqpqHBqTrwH"))  # "One more run!"
 print(test("555"))                   # "5"
 
 5.
+Some really funny web dev gave you a sequence of numbers from his API response as an sequence of strings!
 
-  def index_total(numbers: list, total: int):
-    for i in range(len(numbers)):
-        for j in range(i + 1, len(numbers)): 
-            if numbers[i] + numbers[j] == total:
-                return [i, j] 
+You need to cast the whole array to the correct type.
 
-print(index_total([2,7,11,15], 9))
+Create the function that takes as a parameter a sequence of numbers represented as strings and outputs a sequence of numbers.
+
+ie:["1", "2", "3"] to [1, 2, 3]
+
+Note that you can receive floats as well.
+
+def test(list):
+    list1 = []
+    for i in list:
+        if type(i) == str:
+            list1.append(int(i)
+                         
+    return list1
+print(test(["1","2","3"]))                         
   
